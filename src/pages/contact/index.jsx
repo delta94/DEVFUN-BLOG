@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
+import Header from '../../components/Header';
+import Layout from '../../components/Layout';
 
 export default () => (
   <Layout>
