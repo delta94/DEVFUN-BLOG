@@ -23,6 +23,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/content/data`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
@@ -30,6 +37,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     'gatsby-plugin-netlify',
     `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -48,6 +56,13 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
         icon: `static/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/content/cms/cms.js`,
       },
     },
   ],
