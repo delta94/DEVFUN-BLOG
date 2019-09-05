@@ -19,15 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/content/data`,
+        name: `content`,
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -62,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/content/cms/cms.js`,
+        modulePath: `${__dirname}/content/cms/`,
       },
     },
   ],
