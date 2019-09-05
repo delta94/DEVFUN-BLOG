@@ -14,6 +14,7 @@ module.exports = {
         url: 'https://github.com/amberleyromo',
       },
     ],
+    blogsPerPage: 10,
   },
   plugins: [
     {
@@ -31,6 +32,7 @@ module.exports = {
     'gatsby-plugin-netlify',
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-yaml`,
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -40,18 +42,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Shyn blog`,
+        short_name: `shyn`,
         start_url: `/`,
-        background_color: `#6b37bf`,
-        theme_color: `#6b37bf`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: `static/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
