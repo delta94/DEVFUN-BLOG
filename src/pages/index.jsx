@@ -16,7 +16,10 @@ export default ({ data }) => {
             <Link to={node.fields.slug}>
               <h3>
                 {node.frontmatter.title}
-                <span>—{node.frontmatter.date}</span>
+                <span>
+—
+                  {node.frontmatter.date}
+                </span>
               </h3>
               <p>{node.excerpt}</p>
             </Link>
