@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Preview extends Component {
-  static propTypes = {
-    value: PropTypes.node
-  };
+const Preview = ({ value }) => {
+  return (
+    <p>
+      <strong>Icon: </strong>
+      <img src={value} alt="gatsby" />
+    </p>
+  );
+};
 
-  render() {
-    const { value } = this.props;
-    return (
-      <p>
-        <strong>Icon: </strong>
-        {value}
-      </p>
-    );
-  }
-}
+Preview.propTypes = {
+  value: PropTypes.node.isRequired
+};
 
 export default Preview;

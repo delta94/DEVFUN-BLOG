@@ -17,9 +17,7 @@ export default ({ data }) => {
               <h3>
                 {node.frontmatter.title}
                 <span>
-—
-                  {node.frontmatter.date}
-                </span>
+—{node.frontmatter.date}</span>
               </h3>
               <p>{node.excerpt}</p>
             </Link>

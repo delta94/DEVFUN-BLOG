@@ -1,16 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-class Control extends Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    forID: PropTypes.string,
-    classNameWrapper: PropTypes.string.isRequired
-  };
-
-  handleImageUpload = async image => {
+const Control = ({ classNameWrapper, forID, onChange }) => {
+  const handleImageUpload = async image => {
     const data = new FormData();
-    const { onChange } = this.props;
     data.append('file', image);
     data.append('upload_preset', 'geopins');
     data.append('cloud_name', 'coders-tokyo-shyn');
@@ -21,18 +15,21 @@ class Control extends Component {
     onChange(res.data.url);
   };
 
-  render() {
-    const { classNameWrapper, forID } = this.props;
-    return (
-      <input
-        accept="image/*"
-        type="file"
-        id={forID}
-        className={classNameWrapper}
-        onChange={e => this.handleImageUpload(e.target.files[0])}
-      />
-    );
-  }
-}
+  return (
+    <input
+      accept="image/*"
+      type="file"
+      id={forID}
+      className={classNameWrapper}
+      onChange={e => handleImageUpload(e.target.files[0])}
+    />
+  );
+};
+
+Control.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  forID: PropTypes.string.isRequired,
+  classNameWrapper: PropTypes.string.isRequired
+};
 
 export default Control;

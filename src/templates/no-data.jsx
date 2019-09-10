@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const NoData = () => (
   <section>
@@ -7,5 +7,5 @@ const NoData = () => (
       No data was required to create this page — it’s just a React component!
     </p>
   </section>
-)
-export default NoData
+);
+export default NoData;

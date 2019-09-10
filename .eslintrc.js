@@ -1,6 +1,6 @@
 module.exports = {
   globals: {
-    __PATH_PREFIX__: true,
+    __PATH_PREFIX__: true
   },
   extends: ['airbnb', 'prettier'],
   plugins: [
@@ -9,21 +9,33 @@ module.exports = {
     'react-hooks',
     'prettier',
     'jest',
-    'eslint-comments',
+    'eslint-comments'
   ],
   env: {
     browser: true,
-    jest: true,
+    jest: true
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        tabWidth: 2,
+        printWidth: 80,
+        bracketSpacing: true,
+        semi: true
+      }
+    ],
+    'import/no-named-as-default': 0,
+    'import/no-named-as-default-member': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'react/jsx-fragments': [1, 'element'],
-    'react/jsx-props-no-spreading': 0,
-  },
+    'react/jsx-props-no-spreading': 0
+  }
 };
