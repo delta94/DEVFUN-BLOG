@@ -24,6 +24,13 @@ module.exports = {
         path: `${__dirname}/content/`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content/images/`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
@@ -32,7 +39,14 @@ module.exports = {
     'gatsby-plugin-netlify',
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-yaml`,
-    'gatsby-plugin-mdx',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`]
+      }
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

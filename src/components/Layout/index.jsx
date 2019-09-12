@@ -1,22 +1,19 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 import { GlobalStyle, StyledLayout } from './styles';
+import Header from '../Header';
+import Footer from '../Footer';
 
 const Layout = ({ children }) => {
-  const { title } = useSiteMetadata();
   return (
-    <React.Fragment>
+    <Fragment>
       <GlobalStyle />
       <StyledLayout>
-        <Link to="/">
-          <h3>{title}</h3>
-        </Link>
-        <Link to="/about/">About</Link>
+        <Header />
         {children}
+        <Footer />
       </StyledLayout>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

@@ -2,7 +2,6 @@ backend:
   name: github
   repo: tranthaison1231/STATER_GATSBY
   branch: master # Branch to update (optional; defaults to master)
-publish_mode: editorial_workflow
 media_library:
   name: cloudinary
   config:
@@ -13,9 +12,37 @@ collections:
     label: Blog
     folder: 'content/blog'
     create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
+      - {
+          name: 'template',
+          label: 'Template',
+          widget: 'hidden',
+          default: 'blog',
+        }
+      - {
+          label: 'Highlight Project',
+          name: 'isHighlight',
+          widget: 'boolean',
+          default: false,
+        }
+      - { name: 'name', label: 'Name', widget: 'string' }
       - { name: date, label: Date, widget: 'date' }
       - { name: title, label: Title, widget: 'string' }
       - { name: image, label: Image, widget: 'image' }
-      - { name: icon, label: Icon, widget: 'svg' }
+      - { name: body, label: Body, widget: 'markdown' }
+  - name: project
+    label: Project
+    folder: 'content/project'
+    create: true
+    fields:
+      - {
+          name: 'template',
+          label: 'Template',
+          widget: 'hidden',
+          default: 'project',
+        }
+      - { name: date, label: Date, widget: 'date' }
+      - { name: title, label: Title, widget: 'string' }
+      - { name: image, label: Image, widget: 'image' }
       - { name: body, label: Body, widget: 'markdown' }
