@@ -2,7 +2,7 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
@@ -13,26 +13,70 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const result = await graphql(`
+  // 404
+  createPage({
+    path: '/404',
+    component: path.resolve('./src/pages/404/index.jsx')
+  });
+
+  const allMarkdownQuery = await graphql(`
     query {
-      allMarkdownRemark {
+      allMdx {
         edges {
           node {
             fields {
               slug
             }
+            fileAbsolutePath
           }
         }
       }
     }
   `);
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  const BlogPostTemplate = require.resolve('./src/templates/blog-post.jsx');
+
+  const ProjectPostTemplate = require.resolve(
+    './src/templates/project-post.jsx'
+  );
+  const PageTemplate = require.resolve('./src/templates/page.jsx');
+
+  const markdownFiles = allMarkdownQuery.data.allMdx.edges;
+  const posts = markdownFiles.filter(item =>
+    item.node.fileAbsolutePath.includes('/content/posts/')
+  );
+  const projects = markdownFiles.filter(item =>
+    item.node.fileAbsolutePath.includes('/content/projects/')
+  );
+
+  const pages = markdownFiles.filter(item =>
+    item.node.fileAbsolutePath.includes('/content/pages/')
+  );
+  // -----------------Create Blog Post--------------
+  posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.jsx`),
+      component: BlogPostTemplate,
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
+        slug: node.fields.slug
+      }
+    });
+  });
+  // ---------------Create Project Post------------------
+  projects.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: ProjectPostTemplate,
+      context: {
+        slug: node.fields.slug
+      }
+    });
+  });
+  // ---------------Create Page ------------------
+  pages.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: PageTemplate,
+      context: {
         slug: node.fields.slug
       }
     });

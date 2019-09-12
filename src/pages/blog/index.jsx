@@ -6,7 +6,7 @@ export default () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { frontmatter: { template: { eq: "blog" } } }
+        filter: { frontmatter: { template: { eq: "post" } } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         totalCount

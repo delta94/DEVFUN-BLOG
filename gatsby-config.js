@@ -1,34 +1,33 @@
+const config = require('./data/siteConfig');
+
 module.exports = {
   siteMetadata: {
-    title: 'My Blog',
-    author: 'Shyn',
-    description: 'A collection of my thoughts and writings.',
-    siteUrl: 'https://amberley.blog/',
-    social: [
-      {
-        name: 'twitter',
-        url: 'https://twitter.com/amber1ey'
-      },
-      {
-        name: 'github',
-        url: 'https://github.com/amberleyromo'
-      }
-    ],
-    blogsPerPage: 10
+    title: config.siteTitle,
+    author: config.authorName,
+    description: config.siteDescription,
+    ...config
   },
+  pathPrefix: config.pathPrefix,
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/content/`
-      }
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/content/images/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content/`
       }
     },
     `gatsby-plugin-react-helmet`,
@@ -47,22 +46,34 @@ module.exports = {
         extensions: [`.mdx`, `.md`]
       }
     },
+    `gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`
       }
     },
+    // ---------------SEO--------------------
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Shyn blog`,
-        short_name: `shyn`,
-        start_url: `/`,
-        display: `minimal-ui`,
-        icon: `static/images/icon.png` // This path is relative to the root of the site.
+        name: config.siteTitle,
+        short_name: config.siteTitle,
+        start_url: config.pathPrefix,
+        background_color: config.background_color,
+        theme_color: config.theme_color,
+        display: config.display,
+        icon: config.icon // This path is relative to the root of the site.
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsId
+      }
+    },
+    // -----------------CMS-------------------
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

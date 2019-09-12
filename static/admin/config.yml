@@ -10,7 +10,7 @@ media_library:
 collections:
   - name: blog
     label: Blog
-    folder: 'content/blog'
+    folder: 'content/posts'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -18,10 +18,10 @@ collections:
           name: 'template',
           label: 'Template',
           widget: 'hidden',
-          default: 'blog',
+          default: 'post',
         }
       - {
-          label: 'Highlight Project',
+          label: 'Highlight Posts',
           name: 'isHighlight',
           widget: 'boolean',
           default: false,
@@ -33,7 +33,7 @@ collections:
       - { name: body, label: Body, widget: 'markdown' }
   - name: project
     label: Project
-    folder: 'content/project'
+    folder: 'content/projects'
     create: true
     fields:
       - {
@@ -41,6 +41,21 @@ collections:
           label: 'Template',
           widget: 'hidden',
           default: 'project',
+        }
+      - { name: date, label: Date, widget: 'date' }
+      - { name: title, label: Title, widget: 'string' }
+      - { name: image, label: Image, widget: 'image' }
+      - { name: body, label: Body, widget: 'markdown' }
+  - name: page
+    label: Page
+    folder: 'content/pages'
+    create: true
+    fields:
+      - {
+          name: 'template',
+          label: 'Template',
+          widget: 'hidden',
+          default: 'page',
         }
       - { name: date, label: Date, widget: 'date' }
       - { name: title, label: Title, widget: 'string' }
