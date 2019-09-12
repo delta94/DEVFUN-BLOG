@@ -1,11 +1,28 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import useSiteMetadata from '../../../hooks/useSiteMetadata';
 import StyledNavbar from './style';
 // import PropTypes from 'prop-types';
 
 const Navbar = () => {
   const { title } = useSiteMetadata();
+  const { allMdx } = useStaticQuery(graphql`
+    query {
+      allMdx(filter: { frontmatter: { template: { eq: "page" } } }) {
+        totalCount
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
   return (
     <StyledNavbar>
       <ul className="navbar">
@@ -18,6 +35,13 @@ const Navbar = () => {
         <li className="navbarItem">
           <Link to="/project/">Project</Link>
         </li>
+        {allMdx.edges.map(e => {
+          return (
+            <li className="navbarItem" key={e.node.frontmatter.id}>
+              <Link to={e.node.fields.slug}>{e.node.frontmatter.title}</Link>
+            </li>
+          );
+        })}
       </ul>
     </StyledNavbar>
   );
