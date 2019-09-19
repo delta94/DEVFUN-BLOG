@@ -35,9 +35,9 @@ const Navbar = () => {
         <li className="navbarItem">
           <Link to="/project/">Project</Link>
         </li>
-        {allMdx.edges.map(e => {
+        {allMdx.edges.map((e, index) => {
           return (
-            <li className="navbarItem" key={e.node.frontmatter.id}>
+            <li className="navbarItem" key={String(index)}>
               <Link to={e.node.fields.slug}>{e.node.frontmatter.title}</Link>
             </li>
           );

@@ -15,11 +15,6 @@ module.exports = {
   disqusSiteUrl: 'https://www.maxpou.fr/',
   pathPrefix: '/', // Note: it must *not* have a trailing slash.
   siteCover: 'cover-baymax.jpeg', // file in content/images
-  googleAnalyticsId: 'UA-67868977-1',
-  background_color: '#ffffff',
-  theme_color: '#222222',
-  display: 'standalone',
-  icon: 'content/images/icon.png',
   postsPerPage: 6,
   disqusShortname: 'maxpou',
   headerTitle: 'gatsby-starter-morning-dew',
@@ -38,9 +33,24 @@ module.exports = {
       url: '/how-to-install'
     }
   ],
+
+  /* manifest.json */
+  manifestName: 'DevFun blog',
+  manifestShortName: 'DevFun', // max 12 characters
+  manifestStartUrl: '/index.html',
+  manifestBackgroundColor: 'white',
+  manifestThemeColor: '#666',
+  manifestDisplay: 'standalone',
+  icon: 'content/images/icon.png',
+
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
     name: 'GitHub',
     url: 'https://github.com'
-  }
+  },
+  authorSocialLinks: [
+    { name: 'github', url: 'https://github.com/tranthaison1231' },
+    { name: 'twitter', url: 'https://twitter.com/tranthaison1231' },
+    { name: 'facebook', url: 'https://www.facebook.com/Love.Ren.348' }
+  ]
 };

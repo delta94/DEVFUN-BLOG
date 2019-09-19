@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // 404
   createPage({
     path: '/404',
-    component: path.resolve('./src/pages/404/index.jsx')
+    component: path.resolve('./src/pages/404.jsx')
   });
 
   const allMarkdownQuery = await graphql(`
