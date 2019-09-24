@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import Layout from '../components/Layout';
+import { Layout } from '../components/UI';
 
 export default ({ data }) => {
   const page = data.mdx;

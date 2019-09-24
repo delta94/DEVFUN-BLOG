@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/Layout';
+import { Layout } from '../components/UI';
+import { SEO } from '../components/common';
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,7 @@ export default () => {
   `);
   return (
     <Layout>
+      <SEO title="PROJECT" />
       <h4>
         {data.allMarkdownRemark.totalCount}
         Posts

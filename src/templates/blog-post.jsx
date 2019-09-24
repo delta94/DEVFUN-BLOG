@@ -1,8 +1,10 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import PropTypes from 'prop-types';
+import { Layout } from '../components/UI';
 
-export default ({ data }) => {
+const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -14,6 +16,10 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+BlogPost.propTypes = {
+  data: PropTypes.object.isRequired
+};
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -24,3 +30,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default BlogPost;

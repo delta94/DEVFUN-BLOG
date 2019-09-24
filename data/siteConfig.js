@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Devfun Blog',
+  siteTitle: 'DEVFUN',
   siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
   authorName: 'Shyn',
   twitterUsername: '_maxpou',

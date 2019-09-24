@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import PropTypes from 'prop-types';
+import { Layout } from '../components/UI';
 
-export default ({ data }) => {
+const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -14,6 +15,12 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+ProjectPost.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired
+};
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -24,3 +31,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default ProjectPost;

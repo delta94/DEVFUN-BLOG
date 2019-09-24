@@ -29,7 +29,7 @@ const SEO = ({
   const imageTwitter = `${formatedSiteUrl}${imagePathTwitter}`;
 
   return (
-    <Helmet title={title ? `${title} | ${siteTitle}` : siteTitle}>
+    <Helmet title={title ? `${siteTitle} | ${title}` : siteTitle}>
       <html lang={lang} />
       <meta name="description" content={description} />
       <link rel="canonical" href={formatedSiteUrl + withPrefix(path)} />
@@ -53,17 +53,23 @@ const SEO = ({
 SEO.propTypes = {
   path: PropTypes.string,
   lang: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  isBlogPost: PropTypes.bool.isRequired,
-  imageFb: PropTypes.string.isRequired,
-  cover: PropTypes.string.isRequired,
-  imageTw: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  title: PropTypes.string,
+  isBlogPost: PropTypes.bool,
+  imageFb: PropTypes.string,
+  cover: PropTypes.string,
+  imageTw: PropTypes.string,
+  description: PropTypes.string
 };
 
 SEO.defaultProps = {
   path: '',
-  lang: 'en'
+  lang: 'en',
+  title: null,
+  isBlogPost: false,
+  cover: null,
+  imageFb: null,
+  imageTw: null,
+  description: null
 };
 
 export default SEO;
