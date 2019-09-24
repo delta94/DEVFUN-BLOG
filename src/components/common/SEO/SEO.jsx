@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import PropTypes from 'prop-types';
-import useSiteMetadata from '../../hooks/useSiteMetadata';
+import useSiteMetadata from '../../../hooks/useSiteMetadata';
 
 const SEO = ({
   isBlogPost,

@@ -1,26 +1,19 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { GlobalStyle, StyledLayout } from './styles';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../common/Header';
+import Footer from '../../common/Footer';
 
 const Layout = ({ children }) => {
   return (
-    <Fragment>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
+    <>
       <GlobalStyle />
       <StyledLayout>
         <Header />
         {children}
         <Footer />
       </StyledLayout>
-    </Fragment>
+    </>
   );
 };
 
