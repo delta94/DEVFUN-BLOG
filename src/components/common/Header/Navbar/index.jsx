@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import useSiteMetadata from '../../../hooks/useSiteMetadata';
+import useSiteMetadata from '../../../../hooks/useSiteMetadata';
 import StyledNavbar from './style';
 // import PropTypes from 'prop-types';
 
