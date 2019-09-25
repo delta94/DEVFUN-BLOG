@@ -1,8 +1,8 @@
 module.exports = {
   siteTitle: 'DEVFUN',
-  siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
+  siteDescription: 'Devfun - Frontend Web Developer - React/Gatsby/NextJS',
   authorName: 'Shyn',
-  twitterUsername: '_maxpou',
+  twitterUsername: '@tranthaison1231',
   authorAvatar: 'avatar.jpeg', // file in content/images
   multilangPosts: true, // enable/disable flags in post lists
   authorDescription: `
@@ -11,8 +11,8 @@ module.exports = {
   As a new digital nomad, he is living where the WIFI and sun is 😎 <br>
   Do you want to know more? <a href="https://www.maxpou.fr/about" target="_blank">Visit my website!</a>
   `,
-  siteUrl: 'https://maxpou.github.io/',
-  disqusSiteUrl: 'https://www.maxpou.fr/',
+  siteUrl: 'https://devfun.tk/',
+  disqusSiteUrl: 'https://devfun.tk/',
   pathPrefix: '/', // Note: it must *not* have a trailing slash.
   siteCover: 'cover-baymax.jpeg', // file in content/images
   postsPerPage: 6,
@@ -35,8 +35,8 @@ module.exports = {
   ],
 
   /* manifest.json */
-  manifestName: 'DevFun blog',
-  manifestShortName: 'DevFun', // max 12 characters
+  manifestName: 'DEVFUN',
+  manifestShortName: 'DEVFUN', // max 12 characters
   manifestStartUrl: '/index.html',
   manifestBackgroundColor: 'white',
   manifestThemeColor: '#666',

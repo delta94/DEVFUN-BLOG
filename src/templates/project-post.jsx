@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout } from '../components/UI';
+import { SEO } from '../components/common';
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} isBlogPost />
       <h2> Project </h2>
       <div>
         <h1>{post.frontmatter.title}</h1>

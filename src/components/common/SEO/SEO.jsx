@@ -31,7 +31,7 @@ const SEO = ({
   return (
     <Helmet title={title ? `${siteTitle} | ${title}` : siteTitle}>
       <html lang={lang} />
-      <meta name="description" content={description} />
+      <meta name="description" content={description || siteDescription} />
       <link rel="canonical" href={formatedSiteUrl + withPrefix(path)} />
       <meta property="og:url" content={formatedSiteUrl + withPrefix(path)} />
       <meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
@@ -44,7 +44,10 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta
+        name="twitter:description"
+        content={description || siteDescription}
+      />
       <meta name="twitter:image" content={imageTwitter} />
     </Helmet>
   );

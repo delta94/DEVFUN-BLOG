@@ -5,7 +5,7 @@ import { SEO } from '../components/common';
 export default () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Front-end Web Developer" />
       <h1> Hi, I'm Shyn</h1>
     </Layout>
   );
