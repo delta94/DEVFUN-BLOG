@@ -10,7 +10,7 @@ const Control = ({ classNameWrapper, forID, onChange }) => {
     data.append('cloud_name', 'coders-tokyo-shyn');
     const res = await axios.post(
       'https://api.cloudinary.com/v1_1/coders-tokyo-shyn/image/upload',
-      data
+      data,
     );
     onChange(res.data.url);
   };
@@ -29,7 +29,7 @@ const Control = ({ classNameWrapper, forID, onChange }) => {
 Control.propTypes = {
   onChange: PropTypes.func.isRequired,
   forID: PropTypes.string.isRequired,
-  classNameWrapper: PropTypes.string.isRequired
+  classNameWrapper: PropTypes.string.isRequired,
 };
 
 export default Control;

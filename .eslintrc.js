@@ -27,7 +27,8 @@ module.exports = {
         tabWidth: 2,
         printWidth: 80,
         bracketSpacing: true,
-        semi: true
+        semi: true,
+        trailingComma: 'all'
       }
     ],
     'import/prefer-default-export': 0,

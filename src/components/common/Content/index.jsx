@@ -11,7 +11,7 @@ const Content = ({ content, className }) => (
 
 Content.propTypes = {
   content: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
 };
 
 HTMLContent.propTypes = Content.propTypes;

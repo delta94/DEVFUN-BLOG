@@ -12,14 +12,14 @@ const SEO = ({
   imageFb,
   cover,
   description,
-  imageTw
+  imageTw,
 }) => {
   const {
     siteTitle,
     siteUrl,
     siteCover,
     siteDescription,
-    twitterUsername
+    twitterUsername,
   } = useSiteMetadata();
 
   const formatedSiteUrl = siteUrl.substring(0, siteUrl.length - 1);
@@ -61,7 +61,7 @@ SEO.propTypes = {
   imageFb: PropTypes.string,
   cover: PropTypes.string,
   imageTw: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 SEO.defaultProps = {
@@ -72,7 +72,7 @@ SEO.defaultProps = {
   cover: null,
   imageFb: null,
   imageTw: null,
-  description: null
+  description: null,
 };
 
 export default SEO;

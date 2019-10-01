@@ -20,7 +20,7 @@ const ProjectPost = ({ data }) => {
 
 ProjectPost.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export const query = graphql`

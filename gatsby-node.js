@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
     });
   }
 };
@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // 404
   createPage({
     path: '/404',
-    component: path.resolve('./src/pages/404.jsx')
+    component: path.resolve('./src/pages/404.jsx'),
   });
 
   const allMarkdownQuery = await graphql(`
@@ -36,20 +36,20 @@ exports.createPages = async ({ graphql, actions }) => {
   const BlogPostTemplate = require.resolve('./src/templates/blog-post.jsx');
 
   const ProjectPostTemplate = require.resolve(
-    './src/templates/project-post.jsx'
+    './src/templates/project-post.jsx',
   );
   const PageTemplate = require.resolve('./src/templates/page.jsx');
 
   const markdownFiles = allMarkdownQuery.data.allMdx.edges;
   const posts = markdownFiles.filter(item =>
-    item.node.fileAbsolutePath.includes('/content/posts/')
+    item.node.fileAbsolutePath.includes('/content/posts/'),
   );
   const projects = markdownFiles.filter(item =>
-    item.node.fileAbsolutePath.includes('/content/projects/')
+    item.node.fileAbsolutePath.includes('/content/projects/'),
   );
 
   const pages = markdownFiles.filter(item =>
-    item.node.fileAbsolutePath.includes('/content/pages/')
+    item.node.fileAbsolutePath.includes('/content/pages/'),
   );
   // -----------------Create Blog Post--------------
   posts.forEach(({ node }) => {
@@ -57,8 +57,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: BlogPostTemplate,
       context: {
-        slug: node.fields.slug
-      }
+        slug: node.fields.slug,
+      },
     });
   });
   // ---------------Create Project Post------------------
@@ -67,8 +67,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: ProjectPostTemplate,
       context: {
-        slug: node.fields.slug
-      }
+        slug: node.fields.slug,
+      },
     });
   });
   // ---------------Create Page ------------------
@@ -77,8 +77,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: PageTemplate,
       context: {
-        slug: node.fields.slug
-      }
+        slug: node.fields.slug,
+      },
     });
   });
 };

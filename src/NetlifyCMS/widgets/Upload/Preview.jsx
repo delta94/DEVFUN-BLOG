@@ -11,7 +11,7 @@ const Preview = ({ value }) => {
 };
 
 Preview.propTypes = {
-  value: PropTypes.node.isRequired
+  value: PropTypes.node.isRequired,
 };
 
 export default Preview;

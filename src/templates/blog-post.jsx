@@ -25,7 +25,7 @@ const BlogPost = ({ data }) => {
 };
 
 BlogPost.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 export const query = graphql`
   query($slug: String!) {
