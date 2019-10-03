@@ -5,8 +5,8 @@ import StyledNavbar from './style';
 // import PropTypes from 'prop-types';
 
 const Navbar = () => {
-  const { title } = useSiteMetadata();
-  const { allMdx } = useStaticQuery(graphql`
+  const { siteTitle } = useSiteMetadata();
+  const { allMdx, allFile } = useStaticQuery(graphql`
     query {
       allMdx(filter: { frontmatter: { template: { eq: "page" } } }) {
         totalCount
@@ -21,20 +21,34 @@ const Navbar = () => {
           }
         }
       }
+      allFile(
+        filter: {
+          extension: { regex: "/js/" }
+          name: { nin: ["index", "404"] }
+        }
+      ) {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
     }
   `);
   return (
     <StyledNavbar>
       <ul className="navbar">
         <li className="navbarItem">
-          <Link to="/">{title}</Link>
+          <Link to="/">{siteTitle}</Link>
         </li>
-        <li className="navbarItem">
-          <Link to="/blog/">Blog</Link>
-        </li>
-        <li className="navbarItem">
-          <Link to="/project/">Project</Link>
-        </li>
+        {allFile.edges.map(item => {
+          return (
+            <li className="navbarItem" key={item.node.id}>
+              <Link to={item.node.name}>{item.node.name}</Link>
+            </li>
+          );
+        })}
         {allMdx.edges.map((e, index) => {
           return (
             <li className="navbarItem" key={String(index)}>

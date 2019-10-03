@@ -7,8 +7,12 @@ export default styled.nav`
   }
   .navbarItem {
     padding-right: 1rem;
+    text-transform: uppercase;
     &:last-child {
       padding-right: 0;
+    }
+    a {
+      text-decoration: none;
     }
   }
 `;

@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
+import PropTypes from 'prop-types';
 import { Layout } from '../components/UI';
 
-export default ({ data }) => {
+const PateTemplate = ({ data }) => {
   const page = data.mdx;
   return (
     <Layout>
@@ -12,6 +13,14 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+PateTemplate.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
+};
+
+export default PateTemplate;
+
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
