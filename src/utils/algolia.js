@@ -1,32 +1,58 @@
-/* eslint-disable func-names */
-function chunkString(str, length) {
-  return str.match(new RegExp(`(.|[\r\n]){1,${length}}`, 'g'));
-}
-
-module.exports = function(chunksTotal, { node }) {
-  const {
-    fields: { slug },
-    frontmatter: { title },
-    internal: { content },
-  } = node;
-
-  const noEmojiContent = content.replace(/<img class="emoji-icon".+\/>/g, '');
-
-  const contentChunks = chunkString(noEmojiContent, 5000);
-  const record = { title, slug, content };
-  const recordChunks = contentChunks.reduce(
-    (recordChunksTotal, contentChunksItem, idx) => {
-      return [
-        ...recordChunksTotal,
-        {
-          ...record,
-          ...{ content: contentChunksItem },
-          objectID: `${slug}${idx}`,
-        },
-      ];
-    },
-    [],
-  );
-
-  return [...chunksTotal, ...recordChunks];
-};
+const pageQuery = `{
+  pages: allMarkdownRemark(
+    filter: {
+      fileAbsolutePath: { regex: "/pages/" },
+      frontmatter: {purpose: {eq: "page"}}
+    }
+  ) {
+    edges {
+      node {
+        objectID: id
+        frontmatter {
+          title
+          slug
+        }
+        excerpt(pruneLength: 5000)
+      }
+    }
+  }
+}`;
+const postQuery = `{
+  posts: allMarkdownRemark(
+    filter: { fileAbsolutePath: { regex: "/posts/" } }
+  ) {
+    edges {
+      node {
+        objectID: id
+        frontmatter {
+          title
+          slug
+          date(formatString: "MMM D, YYYY")
+          tags
+        }
+        excerpt(pruneLength: 5000)
+      }
+    }
+  }
+}`;
+const flatten = arr =>
+  arr.map(({ node: { frontmatter, ...rest } }) => ({
+    ...frontmatter,
+    ...rest,
+  }));
+const settings = { attributesToSnippet: [`excerpt:20`] };
+const queries = [
+  {
+    query: pageQuery,
+    transformer: ({ data }) => flatten(data.pages.edges),
+    indexName: `Pages`,
+    settings,
+  },
+  {
+    query: postQuery,
+    transformer: ({ data }) => flatten(data.posts.edges),
+    indexName: `Posts`,
+    settings,
+  },
+];
+module.exports = queries;
