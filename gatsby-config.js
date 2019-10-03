@@ -26,8 +26,8 @@ const queries = [
     query,
     transformer: ({ data }) => {
       return data.allMarkdownRemark.edges.reduce(transformer, []);
-    }
-  }
+    },
+  },
 ];
 
 module.exports = {
@@ -42,12 +42,12 @@ module.exports = {
         : '',
       indexName: process.env.ALGOLIA_INDEX_NAME
         ? process.env.ALGOLIA_INDEX_NAME
-        : ''
+        : '',
     },
     facebook: {
-      appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : ''
+      appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : '',
     },
-    ...config
+    ...config,
   },
   pathPrefix: config.pathPrefix,
   plugins: [
@@ -65,22 +65,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/content/images/`
-      }
+        path: `${__dirname}/content/images/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/content/pages`
-      }
+        path: `${__dirname}/content/pages`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -91,14 +91,14 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              backgroundColor: 'transparent'
-            }
+              backgroundColor: 'transparent',
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 2em`
-            }
+              wrapperStyle: `margin-bottom: 2em`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -119,12 +119,12 @@ module.exports = {
                 'margin-top': '1px',
                 position: 'relative',
                 top: '5px',
-                width: '25px'
-              }
-            }
-          }
-        ]
-      }
+                width: '25px',
+              },
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-algolia`,
@@ -139,22 +139,22 @@ module.exports = {
           ? process.env.ALGOLIA_INDEX_NAME
           : '',
         queries,
-        chunkSize: 10000 // default: 1000
-      }
+        chunkSize: 10000, // default: 1000
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`]
-      }
+        extensions: [`.mdx`, `.md`],
+      },
     },
     `gatsby-plugin-sharp`,
 
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     // ---------------MANIFEST--------------------
     {
@@ -166,30 +166,30 @@ module.exports = {
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
-        icon: config.icon // This path is relative to the root of the site.
-      }
+        icon: config.icon, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID
-      }
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
     },
     // -----------------CMS-------------------
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/NetlifyCMS/`
-      }
+        modulePath: `${__dirname}/src/NetlifyCMS/`,
+      },
     },
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
-    }
-  ]
+          include: /assets/, // See below to configure properly
+        },
+      },
+    },
+  ],
 };

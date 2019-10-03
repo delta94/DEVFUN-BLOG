@@ -22,16 +22,16 @@ module.exports = {
   headerLinks: [
     {
       label: 'Blog',
-      url: '/'
+      url: '/',
     },
     {
       label: 'About',
-      url: '/about-gatsby-starter-morning-dew'
+      url: '/about-gatsby-starter-morning-dew',
     },
     {
       label: 'Installation',
-      url: '/how-to-install'
-    }
+      url: '/how-to-install',
+    },
   ],
 
   /* manifest.json */
@@ -46,11 +46,11 @@ module.exports = {
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
     name: 'GitHub',
-    url: 'https://github.com'
+    url: 'https://github.com',
   },
   authorSocialLinks: [
     { name: 'github', url: 'https://github.com/tranthaison1231' },
     { name: 'twitter', url: 'https://twitter.com/tranthaison1231' },
-    { name: 'facebook', url: 'https://www.facebook.com/Love.Ren.348' }
-  ]
+    { name: 'facebook', url: 'https://www.facebook.com/Love.Ren.348' },
+  ],
 };
