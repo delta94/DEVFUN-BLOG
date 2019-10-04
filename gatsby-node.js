@@ -1,4 +1,3 @@
-const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -13,12 +12,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  // 404
-  createPage({
-    path: '/404',
-    component: path.resolve('./src/pages/404.jsx'),
-  });
-
   const allMarkdownQuery = await graphql(`
     query {
       allMdx {

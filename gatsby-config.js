@@ -36,13 +36,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/content/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `pages`,
         path: `${__dirname}/content/pages`,
       },
@@ -138,7 +131,8 @@ module.exports = {
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
-        icon: config.icon, // This path is relative to the root of the site.
+        icon: config.icon,
+        icons: config.icons, // This path is relative to the root of the site.
       },
     },
     {
