@@ -71,7 +71,6 @@ module.exports = {
               wrapperStyle: `margin-bottom: 2em`,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
