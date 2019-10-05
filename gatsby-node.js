@@ -1,3 +1,5 @@
+const path = require('path');
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
@@ -29,12 +31,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  const BlogPostTemplate = require.resolve('./src/templates/blog-post.jsx');
+  const BlogPostTemplate = path.resolve('./src/templates/blog-post.jsx');
 
-  const ProjectPostTemplate = require.resolve(
-    './src/templates/project-post.jsx',
-  );
-  const PageTemplate = require.resolve('./src/templates/page.jsx');
+  const ProjectPostTemplate = path.resolve('./src/templates/project-post.jsx');
+  const PageTemplate = path.resolve('./src/templates/page.jsx');
 
   const markdownFiles = allMarkdownQuery.data.allMdx.edges;
   const posts = markdownFiles.filter(item =>
