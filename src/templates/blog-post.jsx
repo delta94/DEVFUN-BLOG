@@ -18,6 +18,7 @@ const BlogPost = ({ data }) => {
       <h2> Blog </h2>
       <div>
         <h1>{post.frontmatter.title}</h1>
+        <img src={post.frontmatter.image} alt={post.frontmatter.title} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
@@ -33,6 +34,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        image
       }
     }
   }

@@ -5,8 +5,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: echo ${CLOUD_NAME}
-    api_key: echo ${CLOUD_API_KEY}
+    cloud_name: coders-tokyo-shyn
+    api_key: 914168869417659
 collections:
   - name: blog
     label: Blog
