@@ -58,12 +58,11 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-plugin-sharp`,
+          'gatsby-remark-relative-images',
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              backgroundColor: 'transparent',
+              maxWidth: 590,
             },
           },
           {
@@ -113,8 +112,6 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
-    `gatsby-plugin-sharp`,
-
     {
       resolve: `gatsby-plugin-typography`,
       options: {
