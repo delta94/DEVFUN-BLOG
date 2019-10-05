@@ -61,7 +61,6 @@
     "styled-components": "^4.4.0",
     "stylint": "^2.0.0",
     "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
     "typography-theme-kirkham": "^0.16.19"
   },
   "devDependencies": {
