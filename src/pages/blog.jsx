@@ -42,7 +42,11 @@ export default () => {
               {node.frontmatter.title}
               <span>{node.frontmatter.date}</span>
             </h3>
-            <img src={node.frontmatter.image} alt={node.frontmatter.title} />
+            <img
+              src={node.frontmatter.image}
+              alt={node.frontmatter.title}
+              // className="lazyload"
+            />
             <Link to={node.fields.slug}>
               <p>{node.excerpt}</p>
             </Link>

@@ -58,12 +58,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // `gatsby-remark-lazy-load`,
           'gatsby-remark-relative-images',
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 650,
             },
+          },
+          {
+            resolve: '@johnlindquist/gatsby-remark-embed-codesandbox',
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
