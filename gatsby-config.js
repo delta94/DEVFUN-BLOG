@@ -145,6 +145,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/NetlifyCMS/`,
+        manualInit: true,
       },
     },
     'gatsby-plugin-netlify',
