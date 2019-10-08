@@ -2,7 +2,7 @@ import CMS from 'netlify-cms-app';
 import cloudinary from 'netlify-cms-media-library-cloudinary';
 import EditorYoutube from './components/EditorYoutube';
 import AnotherYoutube from './components/AnotherYoutube';
-import config from './config.json';
+import config from '../../static/admin/config.json';
 // import BlogPostPreview from './previewTemplates/BlogPostPreview';
 import './widgets/Upload';
 // Media Libary
