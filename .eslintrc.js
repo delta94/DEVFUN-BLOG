@@ -3,7 +3,12 @@ module.exports = {
     __PATH_PREFIX__: true,
     tw: true,
   },
-  extends: ['airbnb', 'prettier'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
   plugins: [
     'react',
     'jsx-a11y',
@@ -12,6 +17,11 @@ module.exports = {
     'jest',
     'eslint-comments',
   ],
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
   env: {
     browser: true,
     jest: true,

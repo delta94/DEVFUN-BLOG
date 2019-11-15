@@ -51,5 +51,9 @@ module.exports = {
     { name: 'github', url: 'https://github.com/tranthaison1231' },
     { name: 'twitter', url: 'https://twitter.com/tranthaison1231' },
     { name: 'facebook', url: 'https://www.facebook.com/Love.Ren.348' },
+    {
+      name: 'linkedIn',
+      url: 'https://www.linkedin.com/in/son-tran-b26797182/',
+    },
   ],
 };

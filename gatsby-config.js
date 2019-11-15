@@ -7,18 +7,6 @@ module.exports = {
     title: config.siteTitle,
     author: config.authorName,
     description: config.siteDescription,
-    // algolia: {
-    //   appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : '',
-    //   searchOnlyApiKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-    //     ? process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-    //     : '',
-    //   indexName: process.env.ALGOLIA_INDEX_NAME
-    //     ? process.env.ALGOLIA_INDEX_NAME
-    //     : '',
-    // },
-    // facebook: {
-    //   appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : '',
-    // },
     ...config,
   },
   pathPrefix: config.pathPrefix,
@@ -53,6 +41,12 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://devfun.tk/`,
       },
     },
     {

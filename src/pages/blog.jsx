@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/UI/Layout';
-import { SEO } from '../components/common';
+import { Layout } from 'components/UI';
+import { SEO } from 'components/common';
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -42,11 +42,7 @@ export default () => {
               {node.frontmatter.title}
               <span>{node.frontmatter.date}</span>
             </h3>
-            <img
-              src={node.frontmatter.image}
-              alt={node.frontmatter.title}
-              // className="lazyload"
-            />
+            <img src={node.frontmatter.image} alt={node.frontmatter.title} />
             <Link to={node.fields.slug}>
               <p>{node.excerpt}</p>
             </Link>
