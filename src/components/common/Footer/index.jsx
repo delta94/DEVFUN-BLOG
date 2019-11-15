@@ -1,8 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const StyledFooter = styled.h1`
+  ${tw`text-center`};
+`;
 
 const Footer = () => {
-  return <div> Footer </div>;
+  return <StyledFooter> Footer </StyledFooter>;
 };
 
 Footer.propTypes = {};
