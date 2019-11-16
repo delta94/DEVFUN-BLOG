@@ -11,7 +11,6 @@ module.exports = {
   },
   pathPrefix: config.pathPrefix,
   plugins: [
-    `gatsby-plugin-tailwindcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,

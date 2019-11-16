@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout } from '../components/UI';
-import { SEO } from '../components/common';
+import SEO from 'components/common/SEO';
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;

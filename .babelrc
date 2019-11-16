@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "macros", // Use for tailwind macro
     "@babel/plugin-proposal-optional-chaining",
     [
       "module-resolver",

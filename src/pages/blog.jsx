@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Layout } from 'components/UI';
-import { SEO } from 'components/common';
+import SEO from 'components/common/SEO';
 
-export default () => {
+const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -52,3 +52,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Blog;
