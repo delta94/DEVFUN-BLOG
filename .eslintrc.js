@@ -51,5 +51,11 @@ module.exports = {
       { extensions: ['.tsx', '.jsx', '.js'] },
     ],
     'react/jsx-props-no-spreading': 0,
+    'import/no-extraneous-dependencies': [
+      error,
+      {
+        devDependencies: ['.storybook/**', 'stories/**'],
+      },
+    ],
   },
 };

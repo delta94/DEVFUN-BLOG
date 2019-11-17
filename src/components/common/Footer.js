@@ -8,13 +8,16 @@ const Text = styled.footer`
 const Input = styled.input`
   ${tw`bg-gray-200 focus:bg-white border-transparent focus:border-blue-400`}
 `;
+const Wrapper = styled.div`
+  ${tw`grid`}
+`;
 
 const Footer = () => {
   return (
-    <>
+    <Wrapper>
       <Text> Footer</Text>
       <Input placeholder="Focus me" />
-    </>
+    </Wrapper>
   );
 };
 
