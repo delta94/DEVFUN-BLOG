@@ -29,7 +29,7 @@ const SEO = ({
   const imageTwitter = `${formatedSiteUrl}${imagePathTwitter}`;
 
   return (
-    <Helmet title={title ? `${siteTitle} | ${title}` : siteTitle}>
+    <Helmet title={title ? `${siteTitle} | ${title}` : siteTitle} defer={false}>
       <html lang={lang} />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta
