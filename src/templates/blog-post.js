@@ -2,8 +2,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Layout } from '../components/UI';
 import SEO from 'components/common/SEO';
+import { Layout } from '../components/UI';
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
