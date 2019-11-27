@@ -31,10 +31,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  const BlogPostTemplate = path.resolve('./src/templates/blog-post.jsx');
+  const BlogPostTemplate = path.resolve('./src/templates/blog-post.js');
 
-  const ProjectPostTemplate = path.resolve('./src/templates/project-post.jsx');
-  const PageTemplate = path.resolve('./src/templates/page.jsx');
+  const ProjectPostTemplate = path.resolve('./src/templates/project-post.js');
+  const PageTemplate = path.resolve('./src/templates/page.js');
 
   const markdownFiles = allMarkdownQuery.data.allMdx.edges;
   const posts = markdownFiles.filter(item =>

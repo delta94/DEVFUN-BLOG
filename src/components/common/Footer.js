@@ -2,12 +2,6 @@ import React from 'react';
 import tw from 'tailwind.macro';
 import styled from 'styled-components';
 
-// const Text = styled.footer`
-//   ${tw`text-center text-green-400 m-1 sm:rotate-270 md:rotate-0`}
-// `;
-// const Input = styled.input`
-//   ${tw`bg-gray-200 focus:bg-white border-transparent focus:border-blue-400`}
-// `;
 const StyledFooter = styled.div``;
 
 StyledFooter.Ul = styled.ul`
@@ -15,13 +9,15 @@ StyledFooter.Ul = styled.ul`
 `;
 
 StyledFooter.Li = styled.li`
-  border: 1px solid white;
+  border: 1px solid #080808;
   ${tw`text-center`}
+  color: #000 !important;
 `;
 
 StyledFooter.Bottom = styled.section`
   max-width: calc(100% - 120px);
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
+  line-height: 0.5;
   ${tw`text-center m-auto p-3`}
 `;
 

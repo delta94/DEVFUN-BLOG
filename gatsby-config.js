@@ -11,16 +11,18 @@ module.exports = {
   },
   pathPrefix: config.pathPrefix,
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-json`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-json',
     'gatsby-plugin-netlify',
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-yaml`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-yaml',
+    'gatsby-plugin-catch-links',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-netlify',
+    'gatsby-plugin-svgr',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -140,15 +142,6 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/NetlifyCMS/`,
         manualInit: true,
-      },
-    },
-    'gatsby-plugin-netlify',
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/, // See below to configure properly
-        },
       },
     },
   ],
