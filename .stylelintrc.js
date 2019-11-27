@@ -1,5 +1,3 @@
 module.exports = {
-  extends: [
-    'stylelint-config-shyn',
-  ],
+  extends: ['stylelint-config-shyn'],
 };
