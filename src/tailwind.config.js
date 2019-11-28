@@ -1,6 +1,6 @@
 // import { keyframeFadeIn } from 'utils/animation';
 
-const THEME = require('theme/theme');
+const THEME = require('./theme/theme');
 
 module.exports = {
   theme: {
