@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import PropTypes from 'prop-types';
-import { Layout } from '../components/UI';
+import Layout from 'components/common/Layout';
 
 const PateTemplate = ({ data }) => {
   const page = data.mdx;

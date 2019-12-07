@@ -1,6 +1,14 @@
 import Typography from 'typography';
-import kirkhamTheme from 'typography-theme-kirkham';
 
-const typography = new Typography(kirkhamTheme);
+const typography = new Typography({
+  baseFontSize: '16px',
+  baseLineHeight: 1.45,
+  headerFontFamily: ['Roboto', 'sans-serif'],
+  bodyFontFamily: ['Roboto', 'sans-serif'],
+});
+
+typography.injectStyles();
+
 export default typography;
-export const { rhythm } = typography;
+
+// Custom font: https://alligator.io/gatsbyjs/custom-fonts-in-gatsby/

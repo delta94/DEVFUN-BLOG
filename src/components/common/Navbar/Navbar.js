@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
 const Navbar = () => {
   const { allMdx, allFile, siteTitle } = useNavbar();
   return (
-    <ul className="flex justify-between">
+    <div className="flex justify-between">
       <div className="flex justify-center items-center">
         <Logo className="mr-10" height="60" width="60" fill="#fff" />
         <StyledLink to="/">{siteTitle}</StyledLink>
@@ -41,7 +41,7 @@ const Navbar = () => {
           );
         })}
       </ul>
-    </ul>
+    </div>
   );
 };
 

@@ -90,6 +90,13 @@ export const CLASS_UTILITY = `
   .mt-30 {
     margin-top: 30px;
   }
+  .mt-45 {
+    margin-top: 45px;
+  }
+  .my-45 {
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
   /*-------------------------Background Color -------------------*/
   .bg-white {
     background-color: #fff;
@@ -117,6 +124,9 @@ export const CLASS_UTILITY = `
   .font-light {
     font-weight: 300;
   }
+  .text-16 {
+    font-size: 16px;
+  }
   .text-transparent {
     color: transparent;
   }
@@ -140,6 +150,9 @@ export const CLASS_UTILITY = `
   }
   .w-auto {
     width: auto;
+  }
+  .no-underline {
+    text-decoration: none;
   }
   .w-full {
     width: 100%;
@@ -224,6 +237,9 @@ export const CLASS_UTILITY = `
   .flex-row {
     flex-direction: row;
   }
+  .flex-1 {
+    flex: 1 1 0%;
+  }
   /*----------Flex Box--------------------*/
   .grid {
     display: grid;
@@ -300,6 +316,12 @@ export const CLASS_UTILITY = `
 
   .mb-10 {
     margin-bottom: 10px;
+  }
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+  .mb-40 {
+    margin-bottom: 40px;
   }
   .mb-32 {
     margin-bottom: 32px;

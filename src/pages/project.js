@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { Layout } from 'components/UI';
 import SEO from 'components/common/SEO';
+import Layout from 'components/common/Layout';
 
 export default () => {
   const data = useStaticQuery(graphql`
