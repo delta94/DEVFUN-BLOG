@@ -1,20 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import { ReactComponent as Logo } from 'assets/svg/logo.svg';
 import { useNavbar } from './Navbar.hook';
-import { ReactComponent as Logo } from './logo.svg';
 
-const StyledNavbar = styled.ul`
-  ${tw`flex justify-between`}
-`;
-
-StyledNavbar.Item = styled.li`
-  ${tw`uppercase pr-4 leading-loose`}
-`;
-
-StyledNavbar.Link = styled(Link)`
-  ${tw`no-underline text-white`}
+const StyledLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
   &:hover {
     color: #333;
     background: linear-gradient(to right, #b2fefa, #0ed2f7, #0052d4);
@@ -23,47 +15,33 @@ StyledNavbar.Link = styled(Link)`
   }
 `;
 
-StyledNavbar.Right = styled.div`
-  ${tw`flex list-none`}
-`;
-
-StyledNavbar.Left = styled.div`
-  ${tw`flex justify-center items-center`}
-`;
-
-StyledNavbar.Logo = styled(Logo)`
-  ${tw`mr-3`}
-`;
-
 const Navbar = () => {
   const { allMdx, allFile, siteTitle } = useNavbar();
   return (
-    <StyledNavbar>
-      <StyledNavbar.Left>
-        <StyledNavbar.Logo height="60" width="60" fill="#fff" />
-        <StyledNavbar.Link to="/">{siteTitle}</StyledNavbar.Link>
-      </StyledNavbar.Left>
-      <StyledNavbar.Right>
+    <ul className="flex justify-between">
+      <div className="flex justify-center items-center">
+        <Logo className="mr-10" height="60" width="60" fill="#fff" />
+        <StyledLink to="/">{siteTitle}</StyledLink>
+      </div>
+      <ul className="flex list-none">
         {allFile.edges.map(item => {
           return (
-            <StyledNavbar.Item key={item.node.id}>
-              <StyledNavbar.Link to={item.node.name}>
-                {item.node.name}
-              </StyledNavbar.Link>
-            </StyledNavbar.Item>
+            <li className="uppercase pr-15 leading-loose" key={item.node.id}>
+              <StyledLink to={item.node.name}>{item.node.name}</StyledLink>
+            </li>
           );
         })}
         {allMdx.edges.map((e, index) => {
           return (
-            <StyledNavbar.Item key={String(index)}>
-              <StyledNavbar.Link to={e.node.fields.slug}>
+            <li className="uppercase pr-15 leading-loose" key={String(index)}>
+              <StyledLink to={e.node.fields.slug}>
                 {e.node.frontmatter.title}
-              </StyledNavbar.Link>
-            </StyledNavbar.Item>
+              </StyledLink>
+            </li>
           );
         })}
-      </StyledNavbar.Right>
-    </StyledNavbar>
+      </ul>
+    </ul>
   );
 };
 

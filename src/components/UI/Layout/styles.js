@@ -1,21 +1,20 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { CSS_RESET } from 'utils/css';
+import { CSS_RESET, CLASS_UTILITY } from 'utils/css';
 
 export const StyledLayout = styled.div`
-  background: #100e17;
   color: #fff;
-  padding: 20px;
-  @media (min-width: 768px) {
-    padding: 60px;
-  }
+  background-color: #1a1a1a;
 `;
 
 export const GlobalStyle = createGlobalStyle`
   ${CSS_RESET}
+  ${CLASS_UTILITY}
   html,
   body {
     font-size: 80%;
     line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: #1a1a1a !important;
     @media (min-width: 576px) {
       font-size: 90%;
     }
