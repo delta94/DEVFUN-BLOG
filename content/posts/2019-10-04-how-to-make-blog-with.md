@@ -1,7 +1,7 @@
 ---
 template: post
 isHighlight: true
-name: Ni
+name: 'Ha '
 date: 2019-10-04T04:04:50.289Z
 title: HOW TO MAKE BLOG WITH
 image: >-
