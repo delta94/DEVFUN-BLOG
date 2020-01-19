@@ -24,6 +24,9 @@ const Navbar = () => {
         <StyledLink to="/">{siteTitle}</StyledLink>
       </div>
       <ul className="flex list-none">
+        <li className="uppercase pr-15 leading-loose">
+          <StyledLink to="/">Home</StyledLink>
+        </li>
         {allFile.edges.map(item => {
           return (
             <li className="uppercase pr-15 leading-loose" key={item.node.id}>

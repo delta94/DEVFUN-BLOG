@@ -6,7 +6,10 @@ export default () => {
   return (
     <Layout>
       <SEO title="Front-end Web Developer" />
-      <h1> Hi, Im Shyn</h1>
+      <h2 className="text-400-25-28 text-title"> HELLO, I&apos;M</h2>
+      <h2> TRAN THAI SON </h2>
+      <h2> A Fullstack Developer </h2>
+      <button type="button"> VIEW MY WORK </button>
     </Layout>
   );
 };

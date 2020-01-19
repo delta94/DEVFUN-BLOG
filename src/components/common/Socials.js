@@ -5,7 +5,6 @@ import { ReactComponent as LinkedInIcon } from 'assets/svg/linkedin.svg';
 import { ReactComponent as GithubIcon } from 'assets/svg/github.svg';
 import { ReactComponent as InstagramIcon } from 'assets/svg/instagram.svg';
 
-
 import styled from 'styled-components';
 
 const StyledSocial = styled.li`

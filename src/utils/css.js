@@ -27,7 +27,7 @@ export const CSS_RESET = `
    padding: 0;
   }
   
-  ul {
+  ul, ol {
    list-style: none;
   }
   
@@ -44,9 +44,25 @@ export const CSS_RESET = `
    table-layout: fixed;
    width: 100%;
   }
-
+  
   [hidden] {
    display: none;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
   }
 `;
 
