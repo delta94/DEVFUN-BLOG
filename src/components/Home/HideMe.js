@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 
-const HideMe = props => {
+const HideMe = () => {
   return (
     <div className="flex flex-col center">
       <h2 className="text-700-60px-51px text-title">Do you want to hire me?</h2>
