@@ -28,8 +28,7 @@ const THEME = {
     headerTable: '#fff',
   },
   fonts: {
-    primary: 'Poppins-Regular',
-    secondary: 'Poppins-Regular',
+    primary: 'Courier',
   },
 };
 

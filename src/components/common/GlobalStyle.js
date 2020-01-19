@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
     .bg-container { 
       background-color: ${props => props.theme.background.container}
     }
-    .text-400-25-28 {
-      font: normal 400 25px/2.8 'Inter';
+    .text-400-25-2\\.8 {
+      font: normal 400 25px/2.8 ${props => props.theme.fonts.primary};
     }
   }
 `;
