@@ -14,8 +14,8 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <div className="bg-container text-secondary">
-          <div className="max-w-1340 mx-auto px-20">
-            <div className="mt-30">
+          <div className="max-w-6xl mx-auto px-5">
+            <div className="mt-4">
               <Header />
             </div>
             {children}

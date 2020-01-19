@@ -11,7 +11,7 @@ const THEME = {
     white: '#fff',
   },
   border: {
-    primary: '#fff',
+    primary: '#f98315',
     secondary: '#1890ff',
     container: '#1890ff',
     error: '#2c3e51cc',
@@ -21,6 +21,7 @@ const THEME = {
     primary: '#fff',
     secondary: '#1890ff',
     container: '#1a1a1a',
+    button: '#f98315',
     error: '#2c3e51cc',
     success: '#fff',
     input: '#fff',

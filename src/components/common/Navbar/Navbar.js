@@ -20,23 +20,23 @@ const Navbar = () => {
   return (
     <div className="flex justify-between">
       <div className="flex justify-center items-center">
-        <Logo className="mr-10" height="60" width="60" fill="#fff" />
+        <Logo className="mr-5" height="60" width="60" fill="#fff" />
         <StyledLink to="/">{siteTitle}</StyledLink>
       </div>
-      <ul className="flex list-none">
-        <li className="uppercase pr-15 leading-loose">
+      <ul className="flex list-none items-center">
+        <li className="uppercase pr-3 leading-loose">
           <StyledLink to="/">Home</StyledLink>
         </li>
         {allFile.edges.map(item => {
           return (
-            <li className="uppercase pr-15 leading-loose" key={item.node.id}>
+            <li className="uppercase pr-3 leading-loose" key={item.node.id}>
               <StyledLink to={item.node.name}>{item.node.name}</StyledLink>
             </li>
           );
         })}
         {allMdx.edges.map((e, index) => {
           return (
-            <li className="uppercase pr-15 leading-loose" key={String(index)}>
+            <li className="uppercase pr-3 leading-loose" key={String(index)}>
               <StyledLink to={e.node.fields.slug}>
                 {e.node.frontmatter.title}
               </StyledLink>
