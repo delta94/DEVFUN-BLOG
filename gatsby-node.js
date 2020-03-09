@@ -3,6 +3,40 @@ const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
+const paginate = async ({
+  graphql,
+  actions,
+  collection,
+  pathPrefix,
+  component,
+}) => {
+  const { errors, data } = await graphql(
+    `
+      {
+        allMdx(filter: { fields: { collection: { eq: "${collection}" } } }) {
+          totalCount
+        }
+      }
+    `,
+  );
+
+  const { totalCount } = data.allMdx;
+  const pages = Math.ceil(totalCount / 10);
+
+  Array.from({ length: pages }).forEach((_, i) => {
+    // for each page, use the createPages api to dynamically create that page
+    actions.createPage({
+      path: `${pathPrefix}${i + 1}`,
+      component,
+      context: {
+        skip: i * 10,
+        currentPage: i + 1,
+      },
+    });
+  });
+};
+// https://www.youtube.com/watch?v=gXhmnDdc_bc&t=0s
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   fmImagesToRelative(node);
@@ -15,6 +49,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
   }
 };
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const allMarkdownQuery = await graphql(`
