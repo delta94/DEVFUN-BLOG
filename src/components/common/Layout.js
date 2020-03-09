@@ -4,9 +4,9 @@ import ScrollTop from 'components/common/ScrollTop';
 import Header from 'components/common/Header';
 import Footer from 'components/common/Footer';
 import CopyRight from 'components/common/CopyRight';
-import { StyledLayout, GlobalStyle } from './GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import theme from 'theme/theme';
+import { GlobalStyle } from './GlobalStyle';
 
 const Layout = ({ children }) => {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const path = require('path');
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
@@ -10,7 +11,7 @@ const paginate = async ({
   pathPrefix,
   component,
 }) => {
-  const { errors, data } = await graphql(
+  const { data } = await graphql(
     `
       {
         allMdx(filter: { fields: { collection: { eq: "${collection}" } } }) {

@@ -1,5 +1,5 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
-import useFetchAllBlog from 'hooks/useFetchAllBlog';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { ReactComponent as ArrowIcon } from 'assets/svg/arrow.svg';
@@ -29,7 +29,7 @@ StyledLink.Link = styled(Link)`
 `;
 
 const QuickLinks = () => {
-  const { allMdx, allFile, siteTitle } = useNavbar();
+  const { allMdx, allFile } = useNavbar();
   return (
     <ul className="m-p-0">
       {allFile.edges.map(item => {
