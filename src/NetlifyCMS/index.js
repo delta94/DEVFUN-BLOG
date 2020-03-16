@@ -7,3 +7,4 @@ import './widgets/Upload';
 CMS.registerMediaLibrary(cloudinary);
 CMS.registerEditorComponent(EditorYoutube);
 CMS.registerEditorComponent(AnotherYoutube);
+CMS.init();
