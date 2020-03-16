@@ -16,7 +16,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-json',
     'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cms',
     'gatsby-transformer-yaml',
     'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',
@@ -149,7 +148,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/NetlifyCMS/`,
+        modulePath: `${__dirname}/src/NetlifyCMS/index.js`,
         manualInit: true,
       },
     },
