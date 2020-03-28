@@ -5,27 +5,33 @@ import Header from 'components/common/Header';
 import Footer from 'components/common/Footer';
 import CopyRight from 'components/common/CopyRight';
 import { ThemeProvider } from 'styled-components';
-import theme from 'theme/theme';
+import NoSsr from '@material-ui/core/NoSsr';
+import theme, { customMuiTheme } from 'theme/theme';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { GlobalStyle } from './GlobalStyle';
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <div className="bg-container text-secondary">
-          <div className="max-w-6xl mx-auto px-5">
-            <div className="mt-4">
-              <Header />
+    <NoSsr>
+      <MuiThemeProvider theme={customMuiTheme}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <div className="bg-container secondary-color">
+            <div className="max-w-6xl mx-auto" style={{ padding: '0 20px' }}>
+              <div style={{ marginTop: 20 }}>
+                <Header />
+              </div>
+              <div style={{ margin: '30px 0' }}>{children}</div>
+              <div style={{ marginBottom: 30 }}>
+                <Footer />
+              </div>
+              <ScrollTop />
             </div>
-            {children}
-            <Footer />
-            <ScrollTop />
           </div>
-        </div>
-        <CopyRight />
-      </ThemeProvider>
-    </>
+          <CopyRight />
+        </ThemeProvider>
+      </MuiThemeProvider>
+    </NoSsr>
   );
 };
 

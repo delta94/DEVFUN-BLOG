@@ -23,6 +23,14 @@ module.exports = {
     'gatsby-plugin-netlify',
     'gatsby-plugin-svgr',
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
