@@ -10,39 +10,51 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     scroll-behavior: smooth;
     background-color: #1a1a1a !important;
-    .text-primary {
-      color: ${props => props.theme.text.primary};
+    .primary-color {
+      color: ${(props) => props.theme.palette.primary};
     }
-    .text-title {
-      color: ${props => props.theme.text.title};
+    .secondary-color {
+      color: ${(props) => props.theme.palette.secondary};
     }
-    .text-secondary {
-      color: ${props => props.theme.text.secondary};
+    .normal-color {
+      color: ${(props) => props.theme.palette.normal};
     }
-    .border-button {
-      border: 1px solid ${props => props.theme.border.button};
+    .title-color {
+      color: ${(props) => props.theme.palette.title};
     }
-    .bg-button { 
-      background-color: ${props => props.theme.background.button}
+    .hover\\:primary-color {
+      &:hover {
+        color: ${(props) => props.theme.palette.primary};
+      }
+    }
+    .hover\\:secondary-color {
+      &:hover {
+        color: ${(props) => props.theme.palette.secondary};
+      }
+    }
+    .bg-primary { 
+      background-color: ${(props) => props.theme.palette.primary}
     }
     .bg-container { 
-      background-color: ${props => props.theme.background.container}
+      background-color: ${(props) => props.theme.palette.container}
     }
-    
     .text-60px-51px {
-      font: normal 700 60px/51px ${props => props.theme.fonts.primary};
+      font: normal 700 60px/51px ${(props) => props.theme.fonts.primary};
     }
     .text-20px-23px {
-      font: normal normal 20px/23px ${props => props.theme.fonts.primary};
+      font: normal normal 20px/23px ${(props) => props.theme.fonts.primary};
     }
     .text-400-25px-28px {
-      font: normal 400 25px/28px ${props => props.theme.fonts.primary};
+      font: normal 400 25px/28px ${(props) => props.theme.fonts.primary};
+    }
+    .text-600-40px-30px {
+      font: normal 300 40px/30px ${(props) => props.theme.fonts.primary};
     }
     .text-700-55px-63px\\.25px {
-      font: normal normal 55px/63.25px ${props => props.theme.fonts.primary};
+      font: normal normal 55px/63.25px ${(props) => props.theme.fonts.primary};
     }
     .text-700-60px-51px {
-      font: normal 700 60px/51px ${props => props.theme.fonts.primary};
+      font: normal 700 60px/51px ${(props) => props.theme.fonts.primary};
     }
 
   }

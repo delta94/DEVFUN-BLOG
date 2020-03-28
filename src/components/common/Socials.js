@@ -18,7 +18,7 @@ const StyledSocial = styled.li`
   justify-content: center;
   margin: 0 5px 0 0;
   &:hover {
-    background-color: #feb71d;
+    background-color: ${(props) => props.theme.palette.primary};
   }
 `;
 
