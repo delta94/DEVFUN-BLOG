@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import PropTypes from 'prop-types';
 import useSiteMetadata from 'hooks/useSiteMetadata';
