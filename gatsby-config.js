@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://devfun.tk/`,
+        siteUrl: `https://devfun.me/`,
       },
     },
     {
